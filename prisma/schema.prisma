@@ -1,0 +1,46 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./bible.db"
+}
+
+model verse {
+  id        String  @id
+  number    String
+  reference String
+  content   String
+  chapterId String
+  chapter   chapter @relation(fields: [chapterId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model chapter {
+  id        String  @id
+  number    String
+  reference String
+  bookId    String
+  book      book    @relation(fields: [bookId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  verse     verse[]
+}
+
+model book {
+  id           String    @id
+  abbreviation String
+  name         String
+  nameLong     String
+  bibleId      String
+  bible        bible     @relation(fields: [bibleId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  chapter      chapter[]
+}
+
+model bible {
+  id           String @id
+  name         String
+  abbreviation String
+  description  String
+  language     String
+  copyright    String
+  book         book[]
+}
