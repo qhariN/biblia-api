@@ -24,7 +24,7 @@ export default class VerseController {
 
     const regex = /^(\d+(?:-\d+)?)(,\d+(?:-\d+)?)*$/
     const isValid = regex.test(verseId)
-    if (!isValid) res.status(400).json({ error: 'Invalid value for parameter "verses".' })
+    if (!isValid) throw new Error('Invalid verse format')
 
     const id = `${bookId}.${chapterId}`.toUpperCase()
     const verseStrings = verseId.split(',')

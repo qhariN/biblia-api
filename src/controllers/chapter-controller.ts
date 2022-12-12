@@ -21,7 +21,7 @@ export default class ChapterController {
   static getChapter = async (req: Request, res: Response) => {
     const { bookId, chapterId } = req.params
     const id = `${bookId}.${chapterId}`.toUpperCase()
-    const chapter = await prisma.chapter.findUnique({
+    const chapter = await prisma.chapter.findUniqueOrThrow({
       where: {
         id
       },
