@@ -1,0 +1,30 @@
+{
+  "name": "biblia-api",
+  "version": "2.0.0",
+  "description": "Biblia API",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "start": "bun --watch src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jhormanrus/biblia-api.git"
+  },
+  "keywords": [
+    "biblia",
+    "api"
+  ],
+  "author": "jhormanrus",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jhormanrus/biblia-api/issues"
+  },
+  "homepage": "https://github.com/jhormanrus/biblia-api#readme",
+  "devDependencies": {
+    "bun-types": "latest"
+  },
+  "dependencies": {
+    "regexparam": "^2.0.1"
+  }
+}

@@ -1,0 +1,40 @@
+name: CD - main branch
+
+on:
+  push:
+    branches: [ 'main' ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Use Bun
+      uses: oven-sh/setup-bun@v1
+      with:
+        bun-version: latest
+        
+    - name: Install dependencies
+      run: bun install
+      
+    - name: Copy build to host
+      uses: appleboy/scp-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USER }}
+        key: ${{ secrets.KEY }}
+        rm: true
+        source: './'
+        target: '~/github/${{ github.event.repository.name }}'  
+        strip_components: 1
+    
+    - name: Execute deploy script
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USER }}
+        key: ${{ secrets.KEY }}
+        script: 'cd ~/github && sh deploy.sh ${{ github.event.repository.name }} '
