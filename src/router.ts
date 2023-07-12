@@ -7,7 +7,7 @@ export class Router {
     this.response = new Response(null, { status: 404 })
   }
 
-  get (path: string, callback: (params: Record<string, string | null>, response: { json: (body: Object) => Response }) => Response) {
+  get (path: string, callback: (params: Record<string, string | null>, response: { json: (body: Object, status?: number) => Response }) => Response) {
     const { url, method } = this.request
     const { pathname } = new URL(url)
     const regexparam = parse(path)
@@ -30,8 +30,9 @@ export class Router {
 
   static response () {
     return {
-      json: (body: Object) => new Response(JSON.stringify(body), {
-        headers: { 'content-type': 'application/json' }
+      json: (body: Object, status: number = 200) => new Response(JSON.stringify(body), {
+        headers: { 'content-type': 'application/json' },
+        status
       })
     }
   }
