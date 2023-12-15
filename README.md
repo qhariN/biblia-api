@@ -74,13 +74,27 @@ La API se encuentra en la siguiente dirección: <https://biblia.my.to/book>.
 
 | Método | Endpoint | Descripción |
 | --- | --- | --- |
-| ![GET](https://img.shields.io/badge/GET-0D96F6?style=for-the-badge) | [/book/:bookId/chapter/:chapterId/verse/:verseId](https://biblia.my.to/book/gen/chapter/1/verse/1) | Devuelve el versículo con el ID especificado. :verseId soporta rangos (ej. 1-3,5). |
+| ![GET](https://img.shields.io/badge/GET-0D96F6?style=for-the-badge) | [/book/:bookId/chapter/:chapterId/verse/:verseId](https://biblia.my.to/book/gen/chapter/1/verse/1) | Devuelve el versículo con los IDS especificados. :verseId soporta rangos (ej. 1-3,5). |
 
 ### Responses
 
 | Código | Response |
 | --- | --- |
 | ![200](https://img.shields.io/badge/200-00C853?style=for-the-badge) | [Verse](#esquemas) |
+
+---
+
+| Método | Endpoint | Descripción |
+| --- | --- | --- |
+| ![GET](https://img.shields.io/badge/GET-0D96F6?style=for-the-badge) | [/versebyid/:id](https://biblia.my.to/versebyid/GEN.1.1) | Devuelve el versículo con el ID especificado. |
+
+### Responses
+
+| Código | Response |
+| --- | --- |
+| ![200](https://img.shields.io/badge/200-00C853?style=for-the-badge) | [Verse](#esquemas) |
+| ![404](https://img.shields.io/badge/404-FF1744?style=for-the-badge) | null |
+
 
 ## Esquemas
 
