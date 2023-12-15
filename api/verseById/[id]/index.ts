@@ -10,6 +10,12 @@ export const GET: CromoHandler = ({ params, responseInit }) => {
   );
 
   const verse = query.get(verseId) as Object;
+  if (!verse) {
+    return Response.json(verse, {
+      status: 404,
+      statusText: "Versicle Not Found",
+    });
+  }
 
   return Response.json(verse, responseInit);
 };
