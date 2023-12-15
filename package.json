@@ -21,10 +21,11 @@
   ],
   "license": "ISC",
   "scripts": {
-    "start": "bun src/index.ts"
+    "start": "bun src/index.ts",
+    "dev": "bun --watch src/index.ts"
   },
   "type": "module",
   "dependencies": {
-    "cromo": "^0.0.14"
+    "cromo": "0.3.1"
   }
 }
