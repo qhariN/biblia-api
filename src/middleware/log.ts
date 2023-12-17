@@ -1,7 +1,10 @@
 import { CromoMiddleware } from 'cromo'
 
-export const log: CromoMiddleware = (context, next) => {
+export const log: CromoMiddleware = async (context, next) => {
 	const { request, url } = context
-	console.log(`${request.method.padStart(7)} -> ${url.pathname}`)
-	return next(context)
+	const response = await next(context)
+	console.log(
+		`${request.method.padStart(7)}:${response.status} -> ${url.pathname}`,
+	)
+	return response
 }
