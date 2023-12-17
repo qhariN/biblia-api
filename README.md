@@ -31,7 +31,7 @@ La API se encuentra en la siguiente dirección: <https://biblia.my.to/book>.
 | Código | Response |
 | --- | --- |
 | ![200](https://img.shields.io/badge/200-00C853?style=for-the-badge) | [Book](#esquemas) |
-| ![404](https://img.shields.io/badge/404-FF1744?style=for-the-badge) | Recurso no encontrado |
+| ![404](https://img.shields.io/badge/404-FF1744?style=for-the-badge) | Book not found |
 
 ---
 
@@ -44,6 +44,7 @@ La API se encuentra en la siguiente dirección: <https://biblia.my.to/book>.
 | Código | Response |
 | --- | --- |
 | ![200](https://img.shields.io/badge/200-00C853?style=for-the-badge) | [Chapter[]](#esquemas) |
+| ![404](https://img.shields.io/badge/404-FF1744?style=for-the-badge) | Book not found |
 
 ---
 
@@ -56,7 +57,7 @@ La API se encuentra en la siguiente dirección: <https://biblia.my.to/book>.
 | Código | Response |
 | --- | --- |
 | ![200](https://img.shields.io/badge/200-00C853?style=for-the-badge) | [Chapter](#esquemas) |
-| ![404](https://img.shields.io/badge/404-FF1744?style=for-the-badge) | Recurso no encontrado |
+| ![404](https://img.shields.io/badge/404-FF1744?style=for-the-badge) | Chapter not found |
 
 ---
 
@@ -69,6 +70,7 @@ La API se encuentra en la siguiente dirección: <https://biblia.my.to/book>.
 | Código | Response |
 | --- | --- |
 | ![200](https://img.shields.io/badge/200-00C853?style=for-the-badge) | [Verse[]](#esquemas) |
+| ![404](https://img.shields.io/badge/404-FF1744?style=for-the-badge) | Chapter not found |
 
 ---
 
@@ -81,6 +83,8 @@ La API se encuentra en la siguiente dirección: <https://biblia.my.to/book>.
 | Código | Response |
 | --- | --- |
 | ![200](https://img.shields.io/badge/200-00C853?style=for-the-badge) | [Verse](#esquemas) |
+| ![400](https://img.shields.io/badge/404-FF1744?style=for-the-badge) | Invalid verse format |
+| ![404](https://img.shields.io/badge/404-FF1744?style=for-the-badge) | Verse not found |
 
 ---
 

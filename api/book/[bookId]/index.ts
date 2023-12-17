@@ -10,5 +10,9 @@ export const GET: CromoHandler = ({ params, responseInit }) => {
 	)
 	const book = query.get(bookId)
 
+	if (!book) {
+		return Response.json({ error: 'Book not found' }, 404)
+	}
+
 	return Response.json(book, responseInit)
 }

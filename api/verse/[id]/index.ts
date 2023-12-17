@@ -10,11 +10,9 @@ export const GET: CromoHandler = ({ params, responseInit }) => {
 	)
 
 	const verse = query.get(verseId)
+
 	if (!verse) {
-		return Response.json({
-			status: 404,
-			statusText: 'Verse not found',
-		})
+		return Response.json({ error: 'Verse not found' }, 404)
 	}
 
 	return Response.json(verse, responseInit)

@@ -7,9 +7,15 @@ export const GET: CromoHandler = ({ params, responseInit }) => {
 	const id = `${bookId}.${chapterId}`
 
 	const db = new Database('./src/database/bible.db')
-	const query = db.query(
-		'SELECT id, number, reference, chapterId FROM verse WHERE chapterId = ?1',
-	)
+	const verses = db
+		.query(
+			'SELECT id, number, reference, chapterId FROM verse WHERE chapterId = ?1',
+		)
+		.all(id)
 
-	return Response.json(query.all(id), responseInit)
+	if (!verses.length) {
+		return Response.json({ error: 'Chapter not found' }, 404)
+	}
+
+	return Response.json(verses, responseInit)
 }

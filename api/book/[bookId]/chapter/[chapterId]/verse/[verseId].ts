@@ -29,5 +29,9 @@ export const GET: CromoHandler = ({ params, responseInit }) => {
 	)
 	const verse = query.all(id)
 
+	if (!verse.length) {
+		return Response.json({ error: 'Verse not found' }, 404)
+	}
+
 	return Response.json(verse, responseInit)
 }

@@ -12,5 +12,9 @@ export const GET: CromoHandler = ({ params, responseInit }) => {
 	)
 	const chapter = query.get(id)
 
+	if (!chapter) {
+		return Response.json({ error: 'Chapter not found' }, 404)
+	}
+
 	return Response.json(chapter, responseInit)
 }
