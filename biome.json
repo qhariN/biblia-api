@@ -1,20 +1,23 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.4.1/schema.json",
-	"linter": {
-		"rules": {
-			"all": true,
-			"suspicious": {
-				"noConsoleLog": "off"
-			},
-			"nursery": {
-				"all": false
-			}
-		}
-	},
-	"javascript": {
-		"formatter": {
-			"quoteStyle": "single",
-			"semicolons": "asNeeded"
-		}
-	}
+  "$schema": "https://biomejs.dev/schemas/1.4.1/schema.json",
+  "linter": {
+    "rules": {
+      "all": true,
+      "suspicious": {
+        "noConsoleLog": "off"
+      },
+      "nursery": {
+        "all": false
+      }
+    }
+  },
+  "formatter": {
+    "indentStyle": "space"
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "single",
+      "semicolons": "asNeeded"
+    }
+  }
 }

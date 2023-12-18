@@ -1,6 +1,6 @@
 {
   "name": "biblia-api",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "author": "jhormanrus",
   "repository": {
     "type": "git",
@@ -28,6 +28,6 @@
   },
   "type": "module",
   "dependencies": {
-    "cromo": "0.3.1"
+    "cromo": "0.3.2"
   }
 }

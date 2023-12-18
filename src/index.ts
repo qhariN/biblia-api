@@ -7,5 +7,5 @@ const cromo = new Cromo()
 cromo.setMiddleware([cors, log])
 
 cromo.start((port) => {
-	console.log(`Listening on http://localhost:${port}...`)
+  console.log(`Listening on http://localhost:${port}...`)
 })
